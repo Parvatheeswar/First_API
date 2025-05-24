@@ -20,5 +20,5 @@ with open("data.json") as f:
 
 @app.get("/api")
 async def get_marks(name: list[str] = []):
-    result = [marks_data.get(n, 0) for n in name]
-    return {"marks": result}
+    return {"marks": [marks_data.get(n, 0) for n in name]}
+
